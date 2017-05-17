@@ -12,8 +12,10 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        // Force the orientation to be portrait
+        let value = UIInterfaceOrientation.portrait.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
     }
 
     override func didReceiveMemoryWarning() {

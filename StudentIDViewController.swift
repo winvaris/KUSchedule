@@ -15,20 +15,19 @@ class StudentIDViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Force the orientation to be portrait
         let value = UIInterfaceOrientation.portrait.rawValue
         UIDevice.current.setValue(value, forKey: "orientation")
+        
+        // Add the tapped around to hide keyboard function
         self.hideKeyboardWhenTappedAround()
-        // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-        return false
     }
 
     /*
