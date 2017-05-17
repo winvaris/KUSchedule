@@ -123,6 +123,9 @@ Transcript</string>
                                 <rect key="frame" x="137" y="465" width="140" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="search_button"/>
+                                <connections>
+                                    <segue destination="Ccf-Pa-obN" kind="show" id="7vb-FY-1NI"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Student ID" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jaG-07-eUM">
                                 <rect key="frame" x="85" y="361" width="245" height="30"/>
@@ -143,6 +146,33 @@ Transcript</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0A5-Eu-oe3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="924.63768115942037" y="138.58695652173915"/>
+        </scene>
+        <!--Student Schedule View Controller-->
+        <scene sceneID="Ujo-Qb-Ry3">
+            <objects>
+                <viewController id="Ccf-Pa-obN" customClass="StudentScheduleViewController" customModule="KUSchedule" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8s8-UJ-KwF"/>
+                        <viewControllerLayoutGuide type="bottom" id="B68-wI-yYp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fcY-pp-uHn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FKJ-Ho-cMG">
+                                <rect key="frame" x="137" y="79" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ekH-SV-mio" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1723" y="139"/>
         </scene>
     </scenes>
     <resources>
