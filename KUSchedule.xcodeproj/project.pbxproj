@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19731F7D1ECCCC8000570C71 /* StudentIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19731F7C1ECCCC8000570C71 /* StudentIDViewController.swift */; };
+		19731F7F1ECCCCD200570C71 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19731F7E1ECCCCD200570C71 /* HomeViewController.swift */; };
 		19B454BE1ECC57F600F5238A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B454BD1ECC57F600F5238A /* AppDelegate.swift */; };
 		19B454C01ECC57F600F5238A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B454BF1ECC57F600F5238A /* ViewController.swift */; };
 		19B454C31ECC57F600F5238A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19B454C11ECC57F600F5238A /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		19731F7C1ECCCC8000570C71 /* StudentIDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StudentIDViewController.swift; path = ../StudentIDViewController.swift; sourceTree = "<group>"; };
+		19731F7E1ECCCCD200570C71 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		19B454BA1ECC57F600F5238A /* KUSchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KUSchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19B454BD1ECC57F600F5238A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19B454BF1ECC57F600F5238A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,8 +101,10 @@
 		19B454BC1ECC57F600F5238A /* KUSchedule */ = {
 			isa = PBXGroup;
 			children = (
+				19731F7C1ECCCC8000570C71 /* StudentIDViewController.swift */,
 				19B454BD1ECC57F600F5238A /* AppDelegate.swift */,
 				19B454BF1ECC57F600F5238A /* ViewController.swift */,
+				19731F7E1ECCCCD200570C71 /* HomeViewController.swift */,
 				19B454C11ECC57F600F5238A /* Main.storyboard */,
 				19B454C41ECC57F600F5238A /* Assets.xcassets */,
 				19B454C61ECC57F600F5238A /* LaunchScreen.storyboard */,
@@ -193,6 +199,7 @@
 				TargetAttributes = {
 					19B454B91ECC57F600F5238A = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = RT44NCJNJ3;
 						ProvisioningStyle = Automatic;
 					};
 					19B454CD1ECC57F600F5238A = {
@@ -259,8 +266,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19731F7D1ECCCC8000570C71 /* StudentIDViewController.swift in Sources */,
 				19B454C01ECC57F600F5238A /* ViewController.swift in Sources */,
 				19B454BE1ECC57F600F5238A /* AppDelegate.swift in Sources */,
+				19731F7F1ECCCCD200570C71 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +421,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = RT44NCJNJ3;
 				INFOPLIST_FILE = KUSchedule/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.WinVaris.KUSchedule;
@@ -424,6 +434,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = RT44NCJNJ3;
 				INFOPLIST_FILE = KUSchedule/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.WinVaris.KUSchedule;
@@ -505,6 +516,7 @@
 				19B454E41ECC57F600F5238A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		19B454E51ECC57F600F5238A /* Build configuration list for PBXNativeTarget "KUScheduleTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +525,7 @@
 				19B454E71ECC57F600F5238A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		19B454E81ECC57F600F5238A /* Build configuration list for PBXNativeTarget "KUScheduleUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +534,7 @@
 				19B454EA1ECC57F600F5238A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
