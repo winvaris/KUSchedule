@@ -35,9 +35,6 @@ class StudentScheduleViewController: UIViewController, UITableViewDelegate, UITa
             self.courses = snapshot.value as? NSArray
             print("HI")
             self.tableView.reloadData()
-            //print(value?.object(at: 0))
-            
-            // ...
         }) { (error) in
             print(error.localizedDescription)
         }
@@ -47,9 +44,6 @@ class StudentScheduleViewController: UIViewController, UITableViewDelegate, UITa
             print("HI")
             self.loaded = true;
             self.tableView.reloadData()
-            //print(value?.object(at: 0))
-            
-            // ...
         }) { (error) in
             print(error.localizedDescription)
         }

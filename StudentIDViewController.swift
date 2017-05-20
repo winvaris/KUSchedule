@@ -14,8 +14,7 @@ class StudentIDViewController: UIViewController {
     @IBAction func searchButton(_ sender: Any) {
         print("SEARCHBUTTON")
         let myVC = storyboard?.instantiateViewController(withIdentifier: "StudentTableViewController") as! StudentTableViewController
-        myVC.idPassed = "TESTTEXT"
-        print(myVC.idPassed)
+        myVC.idPassed = idTextField.text
         navigationController?.pushViewController(myVC, animated: true)
     }
     

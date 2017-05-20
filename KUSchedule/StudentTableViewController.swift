@@ -19,7 +19,6 @@ class StudentTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print ("TESTTTTTTTT")
         loaded = false
         tableView.dataSource = self
         tableView.delegate = self
@@ -34,9 +33,6 @@ class StudentTableViewController: UITableViewController {
             self.courses = snapshot.value as? NSArray
             print("HI")
             self.tableView.reloadData()
-            //print(value?.object(at: 0))
-            
-            // ...
         }) { (error) in
             print(error.localizedDescription)
         }
@@ -46,9 +42,6 @@ class StudentTableViewController: UITableViewController {
             print("HI")
             self.loaded = true;
             self.tableView.reloadData()
-            //print(value?.object(at: 0))
-            
-            // ...
         }) { (error) in
             print(error.localizedDescription)
         }
@@ -68,16 +61,44 @@ class StudentTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        if loaded == true {
+            /*
+            var count = 0
+            print("OUTSIDE")
+            for i in 0 ..< self.students!.count {
+                print("idPassed: " + idPassed)
+                let temp: NSDictionary = self.students![i] as! NSDictionary
+                print("students: " + String(describing: temp.object(forKey: "FIELD3")!))
+                if String(describing: temp.object(forKey: "FIELD3")!) == idPassed {
+                    print("INSIDE")
+                    count += 1
+                }
+            }
+            */
+            return self.students!.count
+        }
+        return 0;
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "StudentTableViewCell", for: indexPath) as? StudentTableViewCell
+        else {
+            fatalError("The dequeued cell is not an instance of StudentTableViewCell.")
+        }
+        if loaded == true {
+            print ("SET")
+            let temp: NSDictionary = self.students![indexPath.row] as! NSDictionary
+            print ("After Set: " + String(describing: temp.object(forKey: "FIELD3")!))
+            if String(describing: temp.object(forKey: "FIELD3")!) == idPassed {
+                print ("INSIDE CONDITION")
+                //cell?.textLabel?.text = temp.object(forKey: "FIELD4") as? String
+                cell.nameLabel.text = String(describing: temp.object(forKey: "FIELD4")!)
+                cell.timeLabel.text = String(describing: temp.object(forKey: "FIELD6")!)
+                print ("END INSIDE CONDITION")
+            }
+        }
+        print ("END OF CELL")
         return cell
     }
     
