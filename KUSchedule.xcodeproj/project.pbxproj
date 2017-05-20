@@ -11,6 +11,8 @@
 		19731F7F1ECCCCD200570C71 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19731F7E1ECCCCD200570C71 /* HomeViewController.swift */; };
 		19731F811ECCDFAC00570C71 /* StudentScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19731F801ECCDFAC00570C71 /* StudentScheduleViewController.swift */; };
 		197E280C1ECDFC590052CCD3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 197E280B1ECDFC590052CCD3 /* GoogleService-Info.plist */; };
+		197E28201ED0BEA60052CCD3 /* StudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197E281F1ED0BEA60052CCD3 /* StudentTableViewCell.swift */; };
+		197E28221ED0C0570052CCD3 /* StudentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197E28211ED0C0570052CCD3 /* StudentTableViewController.swift */; };
 		19B454BE1ECC57F600F5238A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B454BD1ECC57F600F5238A /* AppDelegate.swift */; };
 		19B454C01ECC57F600F5238A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B454BF1ECC57F600F5238A /* ViewController.swift */; };
 		19B454C31ECC57F600F5238A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19B454C11ECC57F600F5238A /* Main.storyboard */; };
@@ -45,6 +47,8 @@
 		19731F7E1ECCCCD200570C71 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		19731F801ECCDFAC00570C71 /* StudentScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentScheduleViewController.swift; sourceTree = "<group>"; };
 		197E280B1ECDFC590052CCD3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		197E281F1ED0BEA60052CCD3 /* StudentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentTableViewCell.swift; sourceTree = "<group>"; };
+		197E28211ED0C0570052CCD3 /* StudentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentTableViewController.swift; sourceTree = "<group>"; };
 		19B454BA1ECC57F600F5238A /* KUSchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KUSchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19B454BD1ECC57F600F5238A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19B454BF1ECC57F600F5238A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -122,11 +126,13 @@
 		19B454BC1ECC57F600F5238A /* KUSchedule */ = {
 			isa = PBXGroup;
 			children = (
+				197E281F1ED0BEA60052CCD3 /* StudentTableViewCell.swift */,
 				197E280B1ECDFC590052CCD3 /* GoogleService-Info.plist */,
 				19731F7C1ECCCC8000570C71 /* StudentIDViewController.swift */,
 				19B454BD1ECC57F600F5238A /* AppDelegate.swift */,
 				19B454BF1ECC57F600F5238A /* ViewController.swift */,
 				19731F7E1ECCCCD200570C71 /* HomeViewController.swift */,
+				197E28211ED0C0570052CCD3 /* StudentTableViewController.swift */,
 				19731F801ECCDFAC00570C71 /* StudentScheduleViewController.swift */,
 				19B454C11ECC57F600F5238A /* Main.storyboard */,
 				19B454C41ECC57F600F5238A /* Assets.xcassets */,
@@ -461,10 +467,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				19731F7D1ECCCC8000570C71 /* StudentIDViewController.swift in Sources */,
+				197E28221ED0C0570052CCD3 /* StudentTableViewController.swift in Sources */,
 				19B454C01ECC57F600F5238A /* ViewController.swift in Sources */,
 				19B454BE1ECC57F600F5238A /* AppDelegate.swift in Sources */,
 				19731F811ECCDFAC00570C71 /* StudentScheduleViewController.swift in Sources */,
 				19731F7F1ECCCCD200570C71 /* HomeViewController.swift in Sources */,
+				197E28201ED0BEA60052CCD3 /* StudentTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

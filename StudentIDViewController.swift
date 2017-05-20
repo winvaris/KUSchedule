@@ -11,7 +11,13 @@ import UIKit
 class StudentIDViewController: UIViewController {
 
     @IBOutlet weak var idTextField: UITextField!
-    @IBOutlet weak var searchButton: UIButton!
+    @IBAction func searchButton(_ sender: Any) {
+        print("SEARCHBUTTON")
+        let myVC = storyboard?.instantiateViewController(withIdentifier: "StudentTableViewController") as! StudentTableViewController
+        myVC.idPassed = "TESTTEXT"
+        print(myVC.idPassed)
+        navigationController?.pushViewController(myVC, animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
