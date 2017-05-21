@@ -26,10 +26,6 @@ class CourseInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Force the orientation to be landscape
-        let value = UIInterfaceOrientation.portrait.rawValue
-        UIDevice.current.setValue(value, forKey: "orientation")
-        
         if course != nil {
             yearLabel.text = "Year: " + String(describing: self.course!.object(forKey: "FIELD1")!)
             semesterLabel.text = "Semester: " + String(describing: self.course!.object(forKey: "FIELD2")!)

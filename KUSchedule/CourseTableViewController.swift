@@ -26,10 +26,6 @@ class CourseTableViewController: UITableViewController {
         tableView.delegate = self
         courseSections = []
         
-        // Force the orientation to be landscape
-        let value = UIInterfaceOrientation.portrait.rawValue
-        UIDevice.current.setValue(value, forKey: "orientation")
-        
         ref = Database.database().reference()
         ref!.child("courses").observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value

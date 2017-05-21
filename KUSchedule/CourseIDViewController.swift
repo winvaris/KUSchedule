@@ -19,10 +19,6 @@ class CourseIDViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Force the orientation to be portrait
-        let value = UIInterfaceOrientation.portrait.rawValue
-        UIDevice.current.setValue(value, forKey: "orientation")
         
         // Add the tapped around to hide keyboard function
         self.hideKeyboardWhenTappedAround()
