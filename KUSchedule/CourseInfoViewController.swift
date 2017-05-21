@@ -30,16 +30,18 @@ class CourseInfoViewController: UIViewController {
         let value = UIInterfaceOrientation.portrait.rawValue
         UIDevice.current.setValue(value, forKey: "orientation")
         
-        yearLabel.text = "Year: " + String(describing: self.course!.object(forKey: "FIELD1")!)
-        semesterLabel.text = "Semester: " + String(describing: self.course!.object(forKey: "FIELD2")!)
-        courseIDLabel.text = "Course ID: " + String(describing: self.course!.object(forKey: "FIELD3")!)
-        courseNameLabel.text = "Course Name: " + String(describing: self.course!.object(forKey: "FIELD4")!)
-        courseTypeLabel.text = "Course Type: " + String(describing: self.course!.object(forKey: "FIELD5")!)
-        courseSectionLabel.text = "Course Section: " + String(describing: self.course!.object(forKey: "FIELD6")!)
-        courseTimeLabel.text = "Course Time: " + String(describing: self.course!.object(forKey: "FIELD7")!)
-        locationLabel.text = "Location: " + String(describing: self.course!.object(forKey: "FIELD8")!)
-        profIndexLabel.text = "Professor Index: " + String(describing: self.course!.object(forKey: "FIELD9")!)
-        profNameLabel.text = "Professor's Name: " + String(describing: self.course!.object(forKey: "FIELD10")!)
+        if course != nil {
+            yearLabel.text = "Year: " + String(describing: self.course!.object(forKey: "FIELD1")!)
+            semesterLabel.text = "Semester: " + String(describing: self.course!.object(forKey: "FIELD2")!)
+            courseIDLabel.text = "Course ID: " + String(describing: self.course!.object(forKey: "FIELD3")!)
+            courseNameLabel.text = "Course Name: " + String(describing: self.course!.object(forKey: "FIELD4")!)
+            courseTypeLabel.text = "Course Type: " + String(describing: self.course!.object(forKey: "FIELD5")!)
+            courseSectionLabel.text = "Course Section: " + String(describing: self.course!.object(forKey: "FIELD6")!)
+            courseTimeLabel.text = "Course Time: " + String(describing: self.course!.object(forKey: "FIELD7")!)
+            locationLabel.text = "Location: " + String(describing: self.course!.object(forKey: "FIELD8")!)
+            profIndexLabel.text = "Professor Index: " + String(describing: self.course!.object(forKey: "FIELD9")!)
+            profNameLabel.text = "Professor's Name: " + String(describing: self.course!.object(forKey: "FIELD10")!)
+        }
     }
 
     override func didReceiveMemoryWarning() {
