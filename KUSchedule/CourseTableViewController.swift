@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import os.log
 
 class CourseTableViewController: UITableViewController {
     
@@ -88,6 +89,32 @@ class CourseTableViewController: UITableViewController {
         }
         print ("END OF CELL")
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        switch(segue.identifier ?? "") {
+            
+        case "ShowDetail":
+            guard let courseInfoViewController = segue.destination as? CourseInfoViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            
+            guard let selectedCell = sender as? CourseTableViewCell else {
+                fatalError("Unexpected sender: \(String(describing: sender))")
+            }
+            
+            guard let indexPath = tableView.indexPath(for: selectedCell) else {
+                fatalError("The selected cell is not being displayed by the table")
+            }
+            
+            let selectedCourse = self.courses![indexPath.row] as! NSDictionary
+            courseInfoViewController.course = selectedCourse
+            
+        default:
+            fatalError("Unexpected Segue Identifier; \(segue.identifier)")
+        }
     }
 
     /*

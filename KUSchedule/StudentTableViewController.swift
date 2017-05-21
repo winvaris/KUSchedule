@@ -93,7 +93,7 @@ class StudentTableViewController: UITableViewController {
             if String(describing: temp.object(forKey: "FIELD3")!) == idPassed {
                 for i in 0 ..< self.courses!.count {
                     let tempCrs: NSDictionary = self.courses![i] as! NSDictionary
-                    if String(describing: temp.object(forKey: "FIELD4")!) == String(describing: tempCrs.object(forKey: "FIELD3")!) {
+                    if String(describing: temp.object(forKey: "FIELD4")!) == String(describing: tempCrs.object(forKey: "FIELD3")!) && String(describing: temp.object(forKey: "FIELD6")!) == String(describing: tempCrs.object(forKey: "FIELD6")!) {
                         cell.nameLabel.text = String(describing: tempCrs.object(forKey: "FIELD4")!)
                         cell.timeLabel.text = String(describing: tempCrs.object(forKey: "FIELD7")!)
                         break
@@ -107,6 +107,32 @@ class StudentTableViewController: UITableViewController {
         }
         print ("END OF CELL")
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        switch(segue.identifier ?? "") {
+            
+        case "ShowDetail":
+            guard let courseInfoViewController = segue.destination as? CourseInfoViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            
+            guard let selectedCell = sender as? StudentTableViewCell else {
+                fatalError("Unexpected sender: \(String(describing: sender))")
+            }
+            
+            guard let indexPath = tableView.indexPath(for: selectedCell) else {
+                fatalError("The selected cell is not being displayed by the table")
+            }
+            
+            let selectedCourse = self.courses![indexPath.row] as! NSDictionary
+            courseInfoViewController.course = selectedCourse
+            
+        default:
+            fatalError("Unexpected Segue Identifier; \(segue.identifier)")
+        }
     }
     
 

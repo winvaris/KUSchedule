@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="KUSchedule" customModuleProvider="target" sceneMemberID="viewController">
@@ -90,13 +90,13 @@ Transcript</string>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="lDx-Qx-zPC"/>
+                    <navigationItem key="navigationItem" title="Home" id="lDx-Qx-zPC"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1043.4782608695652" y="138.58695652173915"/>
         </scene>
-        <!--StudentID View Controller-->
+        <!--Search ID-->
         <scene sceneID="uq0-EV-83d">
             <objects>
                 <viewController id="z2R-LY-bzv" customClass="StudentIDViewController" customModule="KUSchedule" customModuleProvider="target" sceneMemberID="viewController">
@@ -141,7 +141,7 @@ Transcript</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="hYX-2V-6y0"/>
+                    <navigationItem key="navigationItem" title="Search ID" id="hYX-2V-6y0"/>
                     <connections>
                         <outlet property="idTextField" destination="jaG-07-eUM" id="Fkg-jV-WRt"/>
                     </connections>
@@ -201,7 +201,7 @@ Transcript</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="skl-MD-4zx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1800" y="821"/>
+            <point key="canvasLocation" x="1800" y="879"/>
         </scene>
         <!--Course Table View Controller-->
         <scene sceneID="D7B-ox-wah">
@@ -216,7 +216,7 @@ Transcript</string>
                                 <rect key="frame" x="0.0" y="28" width="414" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2XA-Ko-dHA" id="LqQ-nE-4lC">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="69.666666666666671"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="69.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="---" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zo1-e9-EPB">
@@ -238,6 +238,7 @@ Transcript</string>
                                 <connections>
                                     <outlet property="sectionLabel" destination="zo1-e9-EPB" id="31I-Fr-2wv"/>
                                     <outlet property="timeLabel" destination="RWm-Ww-ntY" id="Icz-39-c1e"/>
+                                    <segue destination="oZa-UJ-FRO" kind="show" identifier="ShowDetail" id="Emg-AX-UI0"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -253,7 +254,7 @@ Transcript</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="feR-kM-lZb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3216" y="821"/>
+            <point key="canvasLocation" x="3216" y="879"/>
         </scene>
         <!--Your Schedule-->
         <scene sceneID="Doi-oH-EZM">
@@ -290,6 +291,7 @@ Transcript</string>
                                 <connections>
                                     <outlet property="nameLabel" destination="rE3-zY-T8A" id="tjV-KX-dCq"/>
                                     <outlet property="timeLabel" destination="CFt-Cv-Rql" id="W5m-kX-yTJ"/>
+                                    <segue destination="oZa-UJ-FRO" kind="show" identifier="ShowDetail" id="KRJ-Yt-kHU"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -303,6 +305,109 @@ Transcript</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OK8-jX-73c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3217" y="-551"/>
+        </scene>
+        <!--Course Information-->
+        <scene sceneID="nWs-H4-ILy">
+            <objects>
+                <viewController id="oZa-UJ-FRO" customClass="CourseInfoViewController" customModule="KUSchedule" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bzz-SH-Gbp"/>
+                        <viewControllerLayoutGuide type="bottom" id="y5J-c4-JWv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qUw-R1-N2O">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Year: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhZ-ao-NU0">
+                                <rect key="frame" x="25" y="100" width="365" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Semester: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tqP-8h-baJ">
+                                <rect key="frame" x="25" y="150" width="365" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Course ID: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v51-F7-xvy">
+                                <rect key="frame" x="25" y="200" width="365" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Course Name: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4k-86-NsR">
+                                <rect key="frame" x="25" y="250" width="365" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Course Type: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zk2-13-rOj">
+                                <rect key="frame" x="25" y="300" width="365" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Course Section: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wI9-Fh-mCu">
+                                <rect key="frame" x="25" y="350" width="365" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Course Time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cnf-9D-M7F">
+                                <rect key="frame" x="25" y="400" width="365" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otl-6p-t3D">
+                                <rect key="frame" x="25" y="450" width="365" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Professor Index:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="feR-kh-lt7">
+                                <rect key="frame" x="25" y="500" width="365" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Professor's Name: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hcb-Wt-2jn">
+                                <rect key="frame" x="25" y="550" width="365" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Course Information" id="x4k-t8-XME"/>
+                    <connections>
+                        <outlet property="courseIDLabel" destination="v51-F7-xvy" id="fpw-UX-jYK"/>
+                        <outlet property="courseNameLabel" destination="t4k-86-NsR" id="GSi-v0-xUe"/>
+                        <outlet property="courseSectionLabel" destination="wI9-Fh-mCu" id="1RW-kK-8Ui"/>
+                        <outlet property="courseTimeLabel" destination="Cnf-9D-M7F" id="yXl-yr-MrN"/>
+                        <outlet property="courseTypeLabel" destination="zk2-13-rOj" id="fXp-mw-Foq"/>
+                        <outlet property="locationLabel" destination="otl-6p-t3D" id="6n7-vO-jE3"/>
+                        <outlet property="profIndexLabel" destination="feR-kh-lt7" id="EjZ-Qv-eue"/>
+                        <outlet property="profNameLabel" destination="Hcb-Wt-2jn" id="zsj-uj-ojx"/>
+                        <outlet property="semesterLabel" destination="tqP-8h-baJ" id="iOa-fi-dcF"/>
+                        <outlet property="yearLabel" destination="dhZ-ao-NU0" id="9fL-Xb-awk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VG0-aN-Xef" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3918.8405797101454" y="-551.08695652173913"/>
         </scene>
         <!--Student Schedule View Controller-->
         <scene sceneID="Ujo-Qb-Ry3">
@@ -419,7 +524,7 @@ Transcript</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gzg-ZR-vnQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2506" y="821"/>
+            <point key="canvasLocation" x="2506" y="879"/>
         </scene>
     </scenes>
     <resources>
@@ -433,4 +538,7 @@ Transcript</string>
         <image name="student_id" width="1013" height="825"/>
         <image name="transcript" width="81" height="108"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Emg-AX-UI0"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -16,6 +16,7 @@
 		197E28241ED1A2310052CCD3 /* CourseIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197E28231ED1A2310052CCD3 /* CourseIDViewController.swift */; };
 		197E28261ED1A8EA0052CCD3 /* CourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197E28251ED1A8EA0052CCD3 /* CourseTableViewCell.swift */; };
 		197E28281ED1A9030052CCD3 /* CourseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197E28271ED1A9030052CCD3 /* CourseTableViewController.swift */; };
+		197E282A1ED1F77D0052CCD3 /* CourseInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197E28291ED1F77D0052CCD3 /* CourseInfoViewController.swift */; };
 		19B454BE1ECC57F600F5238A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B454BD1ECC57F600F5238A /* AppDelegate.swift */; };
 		19B454C01ECC57F600F5238A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B454BF1ECC57F600F5238A /* ViewController.swift */; };
 		19B454C31ECC57F600F5238A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19B454C11ECC57F600F5238A /* Main.storyboard */; };
@@ -55,6 +56,7 @@
 		197E28231ED1A2310052CCD3 /* CourseIDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseIDViewController.swift; sourceTree = "<group>"; };
 		197E28251ED1A8EA0052CCD3 /* CourseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseTableViewCell.swift; sourceTree = "<group>"; };
 		197E28271ED1A9030052CCD3 /* CourseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseTableViewController.swift; sourceTree = "<group>"; };
+		197E28291ED1F77D0052CCD3 /* CourseInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseInfoViewController.swift; sourceTree = "<group>"; };
 		19B454BA1ECC57F600F5238A /* KUSchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KUSchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19B454BD1ECC57F600F5238A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19B454BF1ECC57F600F5238A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				197E281F1ED0BEA60052CCD3 /* StudentTableViewCell.swift */,
 				197E280B1ECDFC590052CCD3 /* GoogleService-Info.plist */,
 				19731F7C1ECCCC8000570C71 /* StudentIDViewController.swift */,
+				197E28291ED1F77D0052CCD3 /* CourseInfoViewController.swift */,
 				19B454BD1ECC57F600F5238A /* AppDelegate.swift */,
 				19B454BF1ECC57F600F5238A /* ViewController.swift */,
 				19731F7E1ECCCCD200570C71 /* HomeViewController.swift */,
@@ -479,6 +482,7 @@
 				19731F7D1ECCCC8000570C71 /* StudentIDViewController.swift in Sources */,
 				197E28221ED0C0570052CCD3 /* StudentTableViewController.swift in Sources */,
 				19B454C01ECC57F600F5238A /* ViewController.swift in Sources */,
+				197E282A1ED1F77D0052CCD3 /* CourseInfoViewController.swift in Sources */,
 				19B454BE1ECC57F600F5238A /* AppDelegate.swift in Sources */,
 				197E28241ED1A2310052CCD3 /* CourseIDViewController.swift in Sources */,
 				197E28261ED1A8EA0052CCD3 /* CourseTableViewCell.swift in Sources */,
