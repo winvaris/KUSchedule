@@ -256,7 +256,7 @@ Transcript</string>
             </objects>
             <point key="canvasLocation" x="3215.9420289855075" y="878.804347826087"/>
         </scene>
-        <!--Your Schedule-->
+        <!--Schedule-->
         <scene sceneID="Doi-oH-EZM">
             <objects>
                 <tableViewController storyboardIdentifier="StudentTableViewController" id="cPB-7Y-hHu" customClass="StudentTableViewController" customModule="KUSchedule" customModuleProvider="target" sceneMemberID="viewController">
@@ -308,7 +308,7 @@ Transcript</string>
                             <outlet property="delegate" destination="cPB-7Y-hHu" id="J9h-B5-OX9"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Your Schedule" id="caO-lA-4xx"/>
+                    <navigationItem key="navigationItem" title="Schedule" id="caO-lA-4xx"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OK8-jX-73c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
