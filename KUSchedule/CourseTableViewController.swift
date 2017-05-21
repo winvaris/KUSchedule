@@ -1,5 +1,5 @@
 //
-//  StudentTableViewController.swift
+//  CourseTableViewController.swift
 //  KUSchedule
 //
 //  Created by Varis Kritpolchai on 5/21/2560 BE.
@@ -9,13 +9,13 @@
 import UIKit
 import FirebaseDatabase
 
-class StudentTableViewController: UITableViewController {
+class CourseTableViewController: UITableViewController {
     
     var idPassed: String!
     var ref: DatabaseReference?
     var courses: NSArray?
-    var students: NSArray?
     var loaded: Bool?
+    @IBOutlet weak var navTitle: UINavigationItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,14 +31,6 @@ class StudentTableViewController: UITableViewController {
         ref!.child("courses").observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
             self.courses = snapshot.value as? NSArray
-            print("HI")
-            self.tableView.reloadData()
-        }) { (error) in
-            print(error.localizedDescription)
-        }
-        ref!.child("students").observeSingleEvent(of: .value, with: { (snapshot) in
-            // Get user value
-            self.students = snapshot.value as? NSArray
             print("HI")
             self.loaded = true;
             self.tableView.reloadData()
@@ -63,52 +55,40 @@ class StudentTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if loaded == true {
             /*
-            var count = 0
-            print("OUTSIDE")
-            for i in 0 ..< self.students!.count {
-                print("idPassed: " + idPassed)
-                let temp: NSDictionary = self.students![i] as! NSDictionary
-                print("students: " + String(describing: temp.object(forKey: "FIELD3")!))
-                if String(describing: temp.object(forKey: "FIELD3")!) == idPassed {
-                    print("INSIDE")
-                    count += 1
-                }
-            }
-            */
-            return self.students!.count
+             var count = 0
+             print("OUTSIDE")
+             for i in 0 ..< self.students!.count {
+             print("idPassed: " + idPassed)
+             let temp: NSDictionary = self.students![i] as! NSDictionary
+             print("students: " + String(describing: temp.object(forKey: "FIELD3")!))
+             if String(describing: temp.object(forKey: "FIELD3")!) == idPassed {
+             print("INSIDE")
+             count += 1
+             }
+             }
+             */
+            return self.courses!.count
         }
         return 0;
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "StudentTableViewCell", for: indexPath) as? StudentTableViewCell
-        else {
-            fatalError("The dequeued cell is not an instance of StudentTableViewCell.")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CourseTableViewCell", for: indexPath) as? CourseTableViewCell
+            else {
+                fatalError("The dequeued cell is not an instance of StudentTableViewCell.")
         }
+        print ("TEST2")
         if loaded == true {
-            print ("SET")
-            let temp: NSDictionary = self.students![indexPath.row] as! NSDictionary
-            print ("After Set: " + String(describing: temp.object(forKey: "FIELD3")!))
+            let temp: NSDictionary = self.courses![indexPath.row] as! NSDictionary
             if String(describing: temp.object(forKey: "FIELD3")!) == idPassed {
-                for i in 0 ..< self.courses!.count {
-                    let tempCrs: NSDictionary = self.courses![i] as! NSDictionary
-                    if String(describing: temp.object(forKey: "FIELD4")!) == String(describing: tempCrs.object(forKey: "FIELD3")!) {
-                        cell.nameLabel.text = String(describing: tempCrs.object(forKey: "FIELD4")!)
-                        cell.timeLabel.text = String(describing: tempCrs.object(forKey: "FIELD7")!)
-                        break
-                    }
-                }
-                //cell?.textLabel?.text = temp.object(forKey: "FIELD4") as? String
-                //cell.nameLabel.text = String(describing: temp.object(forKey: "FIELD4")!)
-                //cell.timeLabel.text = String(describing: temp.object(forKey: "FIELD6")!)
-                print ("END INSIDE CONDITION")
+                navTitle.title = String(describing: temp.object(forKey: "FIELD4")!)
+                cell.sectionLabel.text = "Section: " + String(describing: temp.object(forKey: "FIELD6")!)
+                cell.timeLabel.text = String(describing: temp.object(forKey: "FIELD7")!)
             }
         }
         print ("END OF CELL")
         return cell
     }
-    
 
     /*
     // Override to support conditional editing of the table view.
