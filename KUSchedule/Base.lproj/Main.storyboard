@@ -227,7 +227,7 @@ Transcript</string>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="---" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWm-Ww-ntY">
-                                            <rect key="frame" x="8" y="40" width="398" height="22"/>
+                                            <rect key="frame" x="176" y="40" width="230" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                                             <nil key="textColor"/>
@@ -254,7 +254,7 @@ Transcript</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="feR-kM-lZb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3216" y="879"/>
+            <point key="canvasLocation" x="3215.9420289855075" y="878.804347826087"/>
         </scene>
         <!--Your Schedule-->
         <scene sceneID="Doi-oH-EZM">
@@ -280,15 +280,23 @@ Transcript</string>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="---" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CFt-Cv-Rql">
-                                            <rect key="frame" x="8" y="40" width="398" height="22"/>
+                                            <rect key="frame" x="176" y="40" width="230" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="---" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWr-kz-5wU">
+                                            <rect key="frame" x="8" y="40" width="140" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="idLabel" destination="GWr-kz-5wU" id="TNP-n5-Sul"/>
                                     <outlet property="nameLabel" destination="rE3-zY-T8A" id="tjV-KX-dCq"/>
                                     <outlet property="timeLabel" destination="CFt-Cv-Rql" id="W5m-kX-yTJ"/>
                                     <segue destination="oZa-UJ-FRO" kind="show" identifier="ShowDetail" id="KRJ-Yt-kHU"/>
@@ -304,7 +312,7 @@ Transcript</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OK8-jX-73c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3217" y="-551"/>
+            <point key="canvasLocation" x="3215.9420289855075" y="-551.08695652173913"/>
         </scene>
         <!--Course Information-->
         <scene sceneID="nWs-H4-ILy">
@@ -539,6 +547,6 @@ Transcript</string>
         <image name="transcript" width="81" height="108"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Emg-AX-UI0"/>
+        <segue reference="KRJ-Yt-kHU"/>
     </inferredMetricsTieBreakers>
 </document>

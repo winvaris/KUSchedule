@@ -96,15 +96,18 @@ class StudentTableViewController: UITableViewController {
                 let temp: NSDictionary = self.enrolledCourses![indexPath.row]
                 cell.nameLabel.text = String(describing: temp.object(forKey: "FIELD4")!)
                 cell.timeLabel.text = String(describing: temp.object(forKey: "FIELD7")!)
+                cell.idLabel.text = "0" + String(describing: temp.object(forKey: "FIELD3")!)
             }
             else {
                 cell.nameLabel.text = "No student id found!!!"
                 cell.timeLabel.text = ""
+                cell.idLabel.text = ""
             }
         }
         else {
             cell.nameLabel.text = "Please wait..."
             cell.timeLabel.text = ""
+            cell.idLabel.text = ""
         }
         //cell?.textLabel?.text = temp.object(forKey: "FIELD4") as? String
         //cell.nameLabel.text = String(describing: temp.object(forKey: "FIELD4")!)

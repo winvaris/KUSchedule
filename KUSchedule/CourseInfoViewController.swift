@@ -33,7 +33,7 @@ class CourseInfoViewController: UIViewController {
         if course != nil {
             yearLabel.text = "Year: " + String(describing: self.course!.object(forKey: "FIELD1")!)
             semesterLabel.text = "Semester: " + String(describing: self.course!.object(forKey: "FIELD2")!)
-            courseIDLabel.text = "Course ID: " + String(describing: self.course!.object(forKey: "FIELD3")!)
+            courseIDLabel.text = "Course ID: 0" + String(describing: self.course!.object(forKey: "FIELD3")!)
             courseNameLabel.text = "Course Name: " + String(describing: self.course!.object(forKey: "FIELD4")!)
             courseTypeLabel.text = "Course Type: " + String(describing: self.course!.object(forKey: "FIELD5")!)
             courseSectionLabel.text = "Course Section: " + String(describing: self.course!.object(forKey: "FIELD6")!)
