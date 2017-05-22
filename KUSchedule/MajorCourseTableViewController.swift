@@ -94,7 +94,7 @@ class MajorCourseTableViewController: UITableViewController {
         switch(segue.identifier ?? "") {
             
         case "ShowDetail":
-            guard let courseInfoViewController = segue.destination as? CourseInfoViewController else {
+            guard let courseTableViewController = segue.destination as? CourseTableViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
             
@@ -105,9 +105,9 @@ class MajorCourseTableViewController: UITableViewController {
             guard let indexPath = tableView.indexPath(for: selectedCell) else {
                 fatalError("The selected cell is not being displayed by the table")
             }
-            
-            let selectedCourse = self.majorCourses![indexPath.row]
-            courseInfoViewController.course = selectedCourse
+            let temp: NSDictionary = self.majorCourses![indexPath.row]
+            let selectedCourseID = String(describing: temp.object(forKey: "FIELD3")!)
+            courseTableViewController.idPassed = selectedCourseID
             
         default:
             fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
