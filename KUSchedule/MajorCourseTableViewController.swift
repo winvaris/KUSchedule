@@ -52,11 +52,17 @@ class MajorCourseTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if loaded == true {
             for i in 0 ..< self.courses!.count {
+                var added = false
                 let temp: NSDictionary = self.courses![i] as! NSDictionary
-                print(String(describing: temp.object(forKey: "FIELD3")!))
-                //if String(describing: temp.object(forKey: "FIELD3")!) == "1355202" { //Edit this
-                majorCourses?.append(temp)
-                //}
+                for j in 0 ..< self.majorCourses!.count {
+                    let tempMjr: NSDictionary = self.majorCourses![j] 
+                    if String(describing: temp.object(forKey: "FIELD3")!) == String(describing: tempMjr.object(forKey: "FIELD3")!) {
+                        added = true
+                    }
+                }
+                if !added {
+                    majorCourses?.append(temp)
+                }
             }
             return majorCourses!.count
         }
