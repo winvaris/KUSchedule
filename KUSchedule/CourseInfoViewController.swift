@@ -31,7 +31,12 @@ class CourseInfoViewController: UIViewController {
             semesterLabel.text = "Semester: " + String(describing: self.course!.object(forKey: "FIELD2")!)
             courseIDLabel.text = "Course ID: 0" + String(describing: self.course!.object(forKey: "FIELD3")!)
             courseNameLabel.text = "Course Name: " + String(describing: self.course!.object(forKey: "FIELD4")!)
-            courseTypeLabel.text = "Course Type: " + String(describing: self.course!.object(forKey: "FIELD5")!)
+            if String(describing: self.course!.object(forKey: "FIELD5")!) == "1" {
+                courseTypeLabel.text = "Course Type: Lecture"
+            }
+            else {
+                courseTypeLabel.text = "Course Type: Lab"
+            }
             courseSectionLabel.text = "Course Section: " + String(describing: self.course!.object(forKey: "FIELD6")!)
             courseTimeLabel.text = "Course Time: " + String(describing: self.course!.object(forKey: "FIELD7")!)
             locationLabel.text = "Location: " + String(describing: self.course!.object(forKey: "FIELD8")!)

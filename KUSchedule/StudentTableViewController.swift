@@ -43,7 +43,6 @@ class StudentTableViewController: UITableViewController {
         }) { (error) in
             print(error.localizedDescription)
         }
-        print(idPassed)
     }
 
     override func didReceiveMemoryWarning() {
@@ -108,7 +107,6 @@ class StudentTableViewController: UITableViewController {
         //cell?.textLabel?.text = temp.object(forKey: "FIELD4") as? String
         //cell.nameLabel.text = String(describing: temp.object(forKey: "FIELD4")!)
         //cell.timeLabel.text = String(describing: temp.object(forKey: "FIELD6")!)
-        print ("END OF CELL")
         return cell
     }
     

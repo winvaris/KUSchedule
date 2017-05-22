@@ -30,8 +30,6 @@ class MajorTableViewController: UITableViewController {
             print("HI")
             self.loaded = true;
             self.tableView.reloadData()
-            print(self.majors!.count)
-            print(self.majors!)
         }) { (error) in
             print(error.localizedDescription)
         }

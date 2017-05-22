@@ -35,7 +35,6 @@ class CourseTableViewController: UITableViewController {
         }) { (error) in
             print(error.localizedDescription)
         }
-        print(idPassed)
     }
 
     override func didReceiveMemoryWarning() {

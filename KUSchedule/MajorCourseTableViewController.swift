@@ -34,7 +34,6 @@ class MajorCourseTableViewController: UITableViewController {
         }) { (error) in
             print(error.localizedDescription)
         }
-        print(majorPassed)
     }
 
     override func didReceiveMemoryWarning() {
@@ -85,6 +84,7 @@ class MajorCourseTableViewController: UITableViewController {
             cell.timeLabel.text = ""
             cell.idLabel.text = ""
         }
+        cell.backgroundColor = UIColor(white: 1, alpha: 0.5)
         return cell
     }
     
