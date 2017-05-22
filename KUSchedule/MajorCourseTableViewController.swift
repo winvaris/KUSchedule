@@ -1,29 +1,28 @@
 //
-//  CourseTableViewController.swift
+//  MajorCourseTableViewController.swift
 //  KUSchedule
 //
-//  Created by Varis Kritpolchai on 5/21/2560 BE.
+//  Created by Varis Kritpolchai on 5/22/2560 BE.
 //  Copyright © 2560 Varis Kritpolchai. All rights reserved.
 //
 
 import UIKit
 import FirebaseDatabase
 
-class CourseTableViewController: UITableViewController {
+class MajorCourseTableViewController: UITableViewController {
     
-    var idPassed: String!
+    var majorPassed: String!
     var ref: DatabaseReference?
     var courses: NSArray?
     var loaded: Bool?
-    var courseSections: [NSDictionary]?
-    @IBOutlet weak var navTitle: UINavigationItem!
+    var majorCourses: [NSDictionary]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loaded = false
         tableView.dataSource = self
         tableView.delegate = self
-        courseSections = []
+        majorCourses = []
         
         ref = Database.database().reference()
         ref!.child("courses").observeSingleEvent(of: .value, with: { (snapshot) in
@@ -35,7 +34,7 @@ class CourseTableViewController: UITableViewController {
         }) { (error) in
             print(error.localizedDescription)
         }
-        print(idPassed)
+        print(majorPassed)
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,70 +53,33 @@ class CourseTableViewController: UITableViewController {
         if loaded == true {
             for i in 0 ..< self.courses!.count {
                 let temp: NSDictionary = self.courses![i] as! NSDictionary
-                if String(describing: temp.object(forKey: "FIELD3")!) == idPassed {
-                    courseSections?.append(temp)
-                }
+                print(String(describing: temp.object(forKey: "FIELD3")!))
+                //if String(describing: temp.object(forKey: "FIELD3")!) == "1355202" { //Edit this
+                majorCourses?.append(temp)
+                //}
             }
-            if (courseSections!.count > 0) {
-                return courseSections!.count
-            }
-            return 1
+            return majorCourses!.count
         }
         return 1
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CourseTableViewCell", for: indexPath) as? CourseTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MajorCourseTableViewCell", for: indexPath) as? MajorCourseTableViewCell
             else {
                 fatalError("The dequeued cell is not an instance of StudentTableViewCell.")
         }
         if loaded == true {
-            if courseSections!.count > 0 {
-                let temp: NSDictionary = self.courseSections![indexPath.row]
-                navTitle.title = String(describing: temp.object(forKey: "FIELD4")!)
-                cell.sectionLabel.text = "Section: " + String(describing: temp.object(forKey: "FIELD6")!)
-                cell.timeLabel.text = String(describing: temp.object(forKey: "FIELD7")!)
-            }
-            else {
-                navTitle.title = ""
-                cell.sectionLabel.text = "No course id found!!!"
-                cell.timeLabel.text = ""
-            }
+            let temp: NSDictionary = self.majorCourses![indexPath.row]
+            cell.nameLabel.text = String(describing: temp.object(forKey: "FIELD4")!)
+            cell.timeLabel.text = String(describing: temp.object(forKey: "FIELD7")!)
+            cell.idLabel.text = "0" + String(describing: temp.object(forKey: "FIELD3")!)
         }
         else {
-            navTitle.title = ""
-            cell.sectionLabel.text = "Please wait..."
+            cell.nameLabel.text = "Please wait..."
             cell.timeLabel.text = ""
+            cell.idLabel.text = ""
         }
         return cell
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if courseSections!.count > 0 {
-            super.prepare(for: segue, sender: sender)
-            
-            switch(segue.identifier ?? "") {
-                
-            case "ShowDetail":
-                guard let courseInfoViewController = segue.destination as? CourseInfoViewController else {
-                    fatalError("Unexpected destination: \(segue.destination)")
-                }
-                
-                guard let selectedCell = sender as? CourseTableViewCell else {
-                    fatalError("Unexpected sender: \(String(describing: sender))")
-                }
-                
-                guard let indexPath = tableView.indexPath(for: selectedCell) else {
-                    fatalError("The selected cell is not being displayed by the table")
-                }
-                
-                let selectedCourse = self.courseSections![indexPath.row]
-                courseInfoViewController.course = selectedCourse
-                
-            default:
-                fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
-            }
-        }
     }
 
     /*

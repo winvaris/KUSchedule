@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		194209781ED2F0380062EEF1 /* FacultyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194209771ED2F0380062EEF1 /* FacultyTableViewController.swift */; };
+		1942097A1ED2F2290062EEF1 /* FacultyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194209791ED2F2290062EEF1 /* FacultyTableViewCell.swift */; };
+		1942097C1ED2F9440062EEF1 /* MajorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1942097B1ED2F9440062EEF1 /* MajorTableViewController.swift */; };
+		1942097E1ED2FA320062EEF1 /* MajorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1942097D1ED2FA320062EEF1 /* MajorTableViewCell.swift */; };
+		194209801ED31AB60062EEF1 /* MajorCourseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1942097F1ED31AB60062EEF1 /* MajorCourseTableViewController.swift */; };
+		194209821ED31ACE0062EEF1 /* MajorCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194209811ED31ACE0062EEF1 /* MajorCourseTableViewCell.swift */; };
 		19731F7D1ECCCC8000570C71 /* StudentIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19731F7C1ECCCC8000570C71 /* StudentIDViewController.swift */; };
 		19731F7F1ECCCCD200570C71 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19731F7E1ECCCCD200570C71 /* HomeViewController.swift */; };
-		19731F811ECCDFAC00570C71 /* StudentScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19731F801ECCDFAC00570C71 /* StudentScheduleViewController.swift */; };
 		197E280C1ECDFC590052CCD3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 197E280B1ECDFC590052CCD3 /* GoogleService-Info.plist */; };
 		197E28201ED0BEA60052CCD3 /* StudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197E281F1ED0BEA60052CCD3 /* StudentTableViewCell.swift */; };
 		197E28221ED0C0570052CCD3 /* StudentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197E28211ED0C0570052CCD3 /* StudentTableViewController.swift */; };
@@ -47,9 +52,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		194209771ED2F0380062EEF1 /* FacultyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacultyTableViewController.swift; sourceTree = "<group>"; };
+		194209791ED2F2290062EEF1 /* FacultyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacultyTableViewCell.swift; sourceTree = "<group>"; };
+		1942097B1ED2F9440062EEF1 /* MajorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MajorTableViewController.swift; sourceTree = "<group>"; };
+		1942097D1ED2FA320062EEF1 /* MajorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MajorTableViewCell.swift; sourceTree = "<group>"; };
+		1942097F1ED31AB60062EEF1 /* MajorCourseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MajorCourseTableViewController.swift; sourceTree = "<group>"; };
+		194209811ED31ACE0062EEF1 /* MajorCourseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MajorCourseTableViewCell.swift; sourceTree = "<group>"; };
 		19731F7C1ECCCC8000570C71 /* StudentIDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StudentIDViewController.swift; path = ../StudentIDViewController.swift; sourceTree = "<group>"; };
 		19731F7E1ECCCCD200570C71 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		19731F801ECCDFAC00570C71 /* StudentScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentScheduleViewController.swift; sourceTree = "<group>"; };
 		197E280B1ECDFC590052CCD3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		197E281F1ED0BEA60052CCD3 /* StudentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentTableViewCell.swift; sourceTree = "<group>"; };
 		197E28211ED0C0570052CCD3 /* StudentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentTableViewController.swift; sourceTree = "<group>"; };
@@ -136,11 +146,16 @@
 			children = (
 				197E28231ED1A2310052CCD3 /* CourseIDViewController.swift */,
 				197E28291ED1F77D0052CCD3 /* CourseInfoViewController.swift */,
-				197E28271ED1A9030052CCD3 /* CourseTableViewController.swift */,
 				197E28251ED1A8EA0052CCD3 /* CourseTableViewCell.swift */,
+				197E28271ED1A9030052CCD3 /* CourseTableViewController.swift */,
+				194209791ED2F2290062EEF1 /* FacultyTableViewCell.swift */,
+				194209771ED2F0380062EEF1 /* FacultyTableViewController.swift */,
 				19731F7E1ECCCCD200570C71 /* HomeViewController.swift */,
+				194209811ED31ACE0062EEF1 /* MajorCourseTableViewCell.swift */,
+				1942097F1ED31AB60062EEF1 /* MajorCourseTableViewController.swift */,
+				1942097D1ED2FA320062EEF1 /* MajorTableViewCell.swift */,
+				1942097B1ED2F9440062EEF1 /* MajorTableViewController.swift */,
 				19731F7C1ECCCC8000570C71 /* StudentIDViewController.swift */,
-				19731F801ECCDFAC00570C71 /* StudentScheduleViewController.swift */,
 				197E281F1ED0BEA60052CCD3 /* StudentTableViewCell.swift */,
 				197E28211ED0C0570052CCD3 /* StudentTableViewController.swift */,
 				19B454BF1ECC57F600F5238A /* ViewController.swift */,
@@ -480,13 +495,18 @@
 			files = (
 				197E28281ED1A9030052CCD3 /* CourseTableViewController.swift in Sources */,
 				19731F7D1ECCCC8000570C71 /* StudentIDViewController.swift in Sources */,
+				1942097E1ED2FA320062EEF1 /* MajorTableViewCell.swift in Sources */,
 				197E28221ED0C0570052CCD3 /* StudentTableViewController.swift in Sources */,
 				19B454C01ECC57F600F5238A /* ViewController.swift in Sources */,
+				1942097A1ED2F2290062EEF1 /* FacultyTableViewCell.swift in Sources */,
+				194209821ED31ACE0062EEF1 /* MajorCourseTableViewCell.swift in Sources */,
+				194209781ED2F0380062EEF1 /* FacultyTableViewController.swift in Sources */,
 				197E282A1ED1F77D0052CCD3 /* CourseInfoViewController.swift in Sources */,
+				1942097C1ED2F9440062EEF1 /* MajorTableViewController.swift in Sources */,
+				194209801ED31AB60062EEF1 /* MajorCourseTableViewController.swift in Sources */,
 				19B454BE1ECC57F600F5238A /* AppDelegate.swift in Sources */,
 				197E28241ED1A2310052CCD3 /* CourseIDViewController.swift in Sources */,
 				197E28261ED1A8EA0052CCD3 /* CourseTableViewCell.swift in Sources */,
-				19731F811ECCDFAC00570C71 /* StudentScheduleViewController.swift in Sources */,
 				19731F7F1ECCCCD200570C71 /* HomeViewController.swift in Sources */,
 				197E28201ED0BEA60052CCD3 /* StudentTableViewCell.swift in Sources */,
 			);
