@@ -233,6 +233,7 @@ Transcript</string>
                                     <outlet property="idLabel" destination="WGU-Oa-rst" id="Fja-qe-wiA"/>
                                     <outlet property="nameLabel" destination="thM-Dp-DZZ" id="mxp-Kj-RGP"/>
                                     <outlet property="timeLabel" destination="gVY-Jv-rvx" id="W1l-FA-bFm"/>
+                                    <segue destination="oZa-UJ-FRO" kind="show" identifier="ShowDetail" id="e7O-nh-YbR"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -636,6 +637,6 @@ Transcript</string>
         <image name="transcript" width="81" height="108"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="KRJ-Yt-kHU"/>
+        <segue reference="e7O-nh-YbR"/>
     </inferredMetricsTieBreakers>
 </document>

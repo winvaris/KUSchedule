@@ -81,6 +81,32 @@ class MajorCourseTableViewController: UITableViewController {
         }
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        switch(segue.identifier ?? "") {
+            
+        case "ShowDetail":
+            guard let courseInfoViewController = segue.destination as? CourseInfoViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            
+            guard let selectedCell = sender as? MajorCourseTableViewCell else {
+                fatalError("Unexpected sender: \(String(describing: sender))")
+            }
+            
+            guard let indexPath = tableView.indexPath(for: selectedCell) else {
+                fatalError("The selected cell is not being displayed by the table")
+            }
+            
+            let selectedCourse = self.majorCourses![indexPath.row]
+            courseInfoViewController.course = selectedCourse
+            
+        default:
+            fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.
