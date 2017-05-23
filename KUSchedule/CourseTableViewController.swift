@@ -48,15 +48,33 @@ class CourseTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
+    
+    func addCourseSections() {
+        for i in 0 ..< self.courses!.count {
+            let temp: NSDictionary = self.courses![i] as! NSDictionary
+            if String(describing: temp.object(forKey: "FIELD3")!) == idPassed {
+                courseSections?.append(temp)
+            }
+        }
+    }
+    
+    func sortSections() {
+        for i in 0 ..< self.courseSections!.count - 1 {
+            for j in (i + 1) ..< self.courseSections!.count {
+                let tempA: NSDictionary = self.courseSections![i]
+                let tempB: NSDictionary = self.courseSections![j]
+                if Int(String(describing: tempA.object(forKey: "FIELD6")!))! > Int(String(describing: tempB.object(forKey: "FIELD6")!))! {
+                    self.courseSections![i] = tempB
+                    self.courseSections![j] = tempA
+                }
+            }
+        }
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if loaded == true {
-            for i in 0 ..< self.courses!.count {
-                let temp: NSDictionary = self.courses![i] as! NSDictionary
-                if String(describing: temp.object(forKey: "FIELD3")!) == idPassed {
-                    courseSections?.append(temp)
-                }
-            }
+            addCourseSections()
+            sortSections()
             if (courseSections!.count > 0) {
                 return courseSections!.count
             }
