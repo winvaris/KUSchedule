@@ -10,6 +10,7 @@ import UIKit
 import FirebaseDatabase
 
 extension MajorCourseTableViewController: UIViewControllerPreviewingDelegate {
+    
     // Peek
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
         guard let indexPath = tableView.indexPathForRow(at: location),
