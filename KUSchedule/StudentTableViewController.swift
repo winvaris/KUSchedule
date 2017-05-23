@@ -18,7 +18,9 @@ extension StudentTableViewController: UIViewControllerPreviewingDelegate {
         
         guard let previewViewController = storyboard?.instantiateViewController(withIdentifier: "CourseInfoViewController") as? CourseInfoViewController else { return nil }
         
-        previewViewController.course = enrolledCourses![indexPath.row]
+        if enrolledCourses!.count > 0 {
+            previewViewController.course = enrolledCourses![indexPath.row]
+        }
         
         previewViewController.preferredContentSize = CGSize(width: 0, height: 600)
         

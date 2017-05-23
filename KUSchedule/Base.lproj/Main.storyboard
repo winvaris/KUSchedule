@@ -220,19 +220,11 @@ Transcript</string>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVY-Jv-rvx">
-                                            <rect key="frame" x="176" y="40" width="230" height="22"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="idLabel" destination="WGU-Oa-rst" id="Fja-qe-wiA"/>
                                     <outlet property="nameLabel" destination="thM-Dp-DZZ" id="mxp-Kj-RGP"/>
-                                    <outlet property="timeLabel" destination="gVY-Jv-rvx" id="W1l-FA-bFm"/>
                                     <segue destination="c9w-MM-1Hz" kind="show" identifier="ShowDetail" id="uZc-6K-AFM"/>
                                 </connections>
                             </tableViewCell>
@@ -637,7 +629,7 @@ Transcript</string>
         <image name="transcript" width="81" height="108"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="KRJ-Yt-kHU"/>
         <segue reference="uZc-6K-AFM"/>
+        <segue reference="Emg-AX-UI0"/>
     </inferredMetricsTieBreakers>
 </document>

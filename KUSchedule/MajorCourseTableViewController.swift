@@ -124,12 +124,10 @@ class MajorCourseTableViewController: UITableViewController {
         if loaded == true {
             let temp: NSDictionary = self.majorCourses![indexPath.row]
             cell.nameLabel.text = String(describing: temp.object(forKey: "FIELD4")!)
-            cell.timeLabel.text = String(describing: temp.object(forKey: "FIELD7")!)
             cell.idLabel.text = "0" + String(describing: temp.object(forKey: "FIELD3")!)
         }
         else {
             cell.nameLabel.text = "Please wait..."
-            cell.timeLabel.text = ""
             cell.idLabel.text = ""
         }
         cell.backgroundColor = UIColor(white: 1, alpha: 0.5)
