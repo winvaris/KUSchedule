@@ -98,76 +98,78 @@ class StudentTableViewController: UITableViewController {
         }
     }
     
-    func sortEnrolledCoursesDay() {
-        for i in 0 ..< self.enrolledCourses!.count - 1 {
-            for j in (i + 1) ..< self.enrolledCourses!.count {
-                let tempA: NSDictionary = self.enrolledCourses![i]
-                let tempB: NSDictionary = self.enrolledCourses![j]
-                var numA = 0
-                var numB = 0
-                
-                // Check for A
-                if String(describing: tempA.object(forKey: "FIELD7")!)[0..<2] == "M " {
-                    numA = 1
-                }
-                else if String(describing: tempA.object(forKey: "FIELD7")!)[0..<2] == "Tu" {
-                    numA = 2
-                }
-                else if String(describing: tempA.object(forKey: "FIELD7")!)[0..<2] == "W " {
-                    numA = 3
-                }
-                else if String(describing: tempA.object(forKey: "FIELD7")!)[0..<2] == "Th" {
-                    numA = 4
-                }
-                else if String(describing: tempA.object(forKey: "FIELD7")!)[0..<2] == "F " {
-                    numA = 5
-                }
-                else if String(describing: tempA.object(forKey: "FIELD7")!)[0..<2] == "Sa" {
-                    numA = 6
-                }
-                else if String(describing: tempA.object(forKey: "FIELD7")!)[0..<2] == "Su" {
-                    numA = 7
-                }
-                
-                // Check for B
-                if String(describing: tempB.object(forKey: "FIELD7")!)[0..<2] == "M " {
-                    numB = 1
-                }
-                else if String(describing: tempB.object(forKey: "FIELD7")!)[0..<2] == "Tu" {
-                    numB = 2
-                }
-                else if String(describing: tempB.object(forKey: "FIELD7")!)[0..<2] == "W " {
-                    numB = 3
-                }
-                else if String(describing: tempB.object(forKey: "FIELD7")!)[0..<2] == "Th" {
-                    numB = 4
-                }
-                else if String(describing: tempB.object(forKey: "FIELD7")!)[0..<2] == "F " {
-                    numB = 5
-                }
-                else if String(describing: tempB.object(forKey: "FIELD7")!)[0..<2] == "Sa" {
-                    numB = 6
-                }
-                else if String(describing: tempB.object(forKey: "FIELD7")!)[0..<2] == "Su" {
-                    numB = 7
-                }
-                
-                // Swap position ordering by day M...Su
-                if numA > numB {
-                    self.enrolledCourses![i] = tempB
-                    self.enrolledCourses![j] = tempA
+    func sortDay() {
+        if self.enrolledCourses!.count > 0 {
+            for i in 0 ..< self.enrolledCourses!.count - 1 {
+                for j in (i + 1) ..< self.enrolledCourses!.count {
+                    let tempA: NSDictionary = self.enrolledCourses![i]
+                    let tempB: NSDictionary = self.enrolledCourses![j]
+                    var numA = 0
+                    var numB = 0
+                    
+                    // Check for A
+                    if String(describing: tempA.object(forKey: "FIELD7")!)[0..<2] == "M " {
+                        numA = 1
+                    }
+                    else if String(describing: tempA.object(forKey: "FIELD7")!)[0..<2] == "Tu" {
+                        numA = 2
+                    }
+                    else if String(describing: tempA.object(forKey: "FIELD7")!)[0..<2] == "W " {
+                        numA = 3
+                    }
+                    else if String(describing: tempA.object(forKey: "FIELD7")!)[0..<2] == "Th" {
+                        numA = 4
+                    }
+                    else if String(describing: tempA.object(forKey: "FIELD7")!)[0..<2] == "F " {
+                        numA = 5
+                    }
+                    else if String(describing: tempA.object(forKey: "FIELD7")!)[0..<2] == "Sa" {
+                        numA = 6
+                    }
+                    else if String(describing: tempA.object(forKey: "FIELD7")!)[0..<2] == "Su" {
+                        numA = 7
+                    }
+                    
+                    // Check for B
+                    if String(describing: tempB.object(forKey: "FIELD7")!)[0..<2] == "M " {
+                        numB = 1
+                    }
+                    else if String(describing: tempB.object(forKey: "FIELD7")!)[0..<2] == "Tu" {
+                        numB = 2
+                    }
+                    else if String(describing: tempB.object(forKey: "FIELD7")!)[0..<2] == "W " {
+                        numB = 3
+                    }
+                    else if String(describing: tempB.object(forKey: "FIELD7")!)[0..<2] == "Th" {
+                        numB = 4
+                    }
+                    else if String(describing: tempB.object(forKey: "FIELD7")!)[0..<2] == "F " {
+                        numB = 5
+                    }
+                    else if String(describing: tempB.object(forKey: "FIELD7")!)[0..<2] == "Sa" {
+                        numB = 6
+                    }
+                    else if String(describing: tempB.object(forKey: "FIELD7")!)[0..<2] == "Su" {
+                        numB = 7
+                    }
+                    
+                    // Swap position ordering by day M...Su
+                    if numA > numB {
+                        self.enrolledCourses![i] = tempB
+                        self.enrolledCourses![j] = tempA
+                    }
                 }
             }
+            sortTime()
         }
     }
     
-    func sortEnrolledCoursesTime() {
+    func sortTime() {
         for i in 0 ..< self.enrolledCourses!.count - 1 {
             let tempA: NSDictionary = self.enrolledCourses![i]
             let tempB: NSDictionary = self.enrolledCourses![i + 1]
             let strA = String(describing: tempA.object(forKey: "FIELD7")!)
             let strB = String(describing: tempB.object(forKey: "FIELD7")!)
-            print ("Before Condition")
             // Swap position ordering by time
             if strA[0..<2] == strB[0..<2] {
                 if Int(strA[2] + strA[3])! > Int(strB[2] + strB[3])! {
@@ -175,15 +177,13 @@ class StudentTableViewController: UITableViewController {
                     self.enrolledCourses![i + 1] = tempA
                 }
             }
-            print ("After Condition")
         }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if loaded == true {
             addEnrolledCourses()
-            sortEnrolledCoursesDay()
-            sortEnrolledCoursesTime()
+            sortDay()
             if (enrolledCourses!.count > 0) {
                 return enrolledCourses!.count
             }

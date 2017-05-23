@@ -86,13 +86,15 @@ class CourseTableViewController: UITableViewController {
     }
     
     func sortSections() {
-        for i in 0 ..< self.courseSections!.count - 1 {
-            for j in (i + 1) ..< self.courseSections!.count {
-                let tempA: NSDictionary = self.courseSections![i]
-                let tempB: NSDictionary = self.courseSections![j]
-                if Int(String(describing: tempA.object(forKey: "FIELD6")!))! > Int(String(describing: tempB.object(forKey: "FIELD6")!))! {
-                    self.courseSections![i] = tempB
-                    self.courseSections![j] = tempA
+        if self.courseSections!.count > 0 {
+            for i in 0 ..< self.courseSections!.count - 1 {
+                for j in (i + 1) ..< self.courseSections!.count {
+                    let tempA: NSDictionary = self.courseSections![i]
+                    let tempB: NSDictionary = self.courseSections![j]
+                    if Int(String(describing: tempA.object(forKey: "FIELD6")!))! > Int(String(describing: tempB.object(forKey: "FIELD6")!))! {
+                        self.courseSections![i] = tempB
+                        self.courseSections![j] = tempA
+                    }
                 }
             }
         }
