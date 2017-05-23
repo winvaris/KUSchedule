@@ -42,7 +42,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
+    
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        if shortcutItem.type == "com.WinVaris.studentSchedule" {
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let studentScheduleVC = storyBoard.instantiateViewController(withIdentifier: "StudentIDViewController") as! StudentIDViewController
+            let root = UIApplication.shared.keyWindow?.rootViewController
+            
+            root?.present(studentScheduleVC, animated: false, completion: { (Bool) -> Void in
+                completionHandler(true)
+            })
+        }
+        else if shortcutItem.type == "com.WinVaris.courseSchedule" {
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let courseScheduleVC = storyBoard.instantiateViewController(withIdentifier: "CourseIDViewController") as! CourseIDViewController
+            let root = UIApplication.shared.keyWindow?.rootViewController
+            
+            root?.present(courseScheduleVC, animated: false, completion: { (Bool) -> Void in
+                completionHandler(true)
+            })
+        }
+        else if shortcutItem.type == "com.WinVaris.majorSchedule" {
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let facultyVC = storyBoard.instantiateViewController(withIdentifier: "FacultyTableViewController") as! FacultyTableViewController
+            let root = UIApplication.shared.keyWindow?.rootViewController
+            
+            root?.present(facultyVC, animated: false, completion: { (Bool) -> Void in
+                completionHandler(true)
+            })
+        }
+    }
 
 }
 

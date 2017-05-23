@@ -9,6 +9,31 @@
 import UIKit
 import FirebaseDatabase
 
+extension MajorCourseTableViewController: UIViewControllerPreviewingDelegate {
+    // Peek
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        guard let indexPath = tableView.indexPathForRow(at: location),
+            let cell = tableView.cellForRow(at: indexPath) else { return nil }
+        
+        guard let previewViewController = storyboard?.instantiateViewController(withIdentifier: "CourseTableViewController") as? CourseTableViewController else { return nil }
+        
+        let temp: NSDictionary = self.majorCourses![indexPath.row]
+        let selectedCourseID = String(describing: temp.object(forKey: "FIELD3")!)
+        previewViewController.idPassed = selectedCourseID
+        
+        previewViewController.preferredContentSize = CGSize(width: 0, height: 800)
+        
+        previewingContext.sourceRect = cell.frame
+        
+        return previewViewController
+    }
+    
+    // Pop
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        
+    }
+}
+
 class MajorCourseTableViewController: UITableViewController {
     
     var majorPassed: String!
@@ -23,6 +48,10 @@ class MajorCourseTableViewController: UITableViewController {
         tableView.dataSource = self
         tableView.delegate = self
         majorCourses = []
+        
+        if traitCollection.forceTouchCapability == .available {
+            registerForPreviewing(with: self, sourceView: tableView)
+        }
         
         ref = Database.database().reference()
         ref!.child("courses").observeSingleEvent(of: .value, with: { (snapshot) in
@@ -47,22 +76,40 @@ class MajorCourseTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
+    
+    func addMajorCourses() {
+        for i in 0 ..< self.courses!.count {
+            var added = false
+            let temp: NSDictionary = self.courses![i] as! NSDictionary
+            for j in 0 ..< self.majorCourses!.count {
+                let tempMjr: NSDictionary = self.majorCourses![j]
+                if String(describing: temp.object(forKey: "FIELD3")!) == String(describing: tempMjr.object(forKey: "FIELD3")!) {
+                    added = true
+                }
+            }
+            if !added {
+                majorCourses?.append(temp)
+            }
+        }
+    }
+    
+    func sortCourses() {
+        for i in 0 ..< self.majorCourses!.count - 1 {
+            for j in (i + 1) ..< self.majorCourses!.count {
+                let tempA: NSDictionary = self.majorCourses![i]
+                let tempB: NSDictionary = self.majorCourses![j]
+                if String(describing: tempA.object(forKey: "FIELD4")!) > String(describing: tempB.object(forKey: "FIELD4")!) {
+                    self.majorCourses![i] = tempB
+                    self.majorCourses![j] = tempA
+                }
+            }
+        }
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if loaded == true {
-            for i in 0 ..< self.courses!.count {
-                var added = false
-                let temp: NSDictionary = self.courses![i] as! NSDictionary
-                for j in 0 ..< self.majorCourses!.count {
-                    let tempMjr: NSDictionary = self.majorCourses![j] 
-                    if String(describing: temp.object(forKey: "FIELD3")!) == String(describing: tempMjr.object(forKey: "FIELD3")!) {
-                        added = true
-                    }
-                }
-                if !added {
-                    majorCourses?.append(temp)
-                }
-            }
+            addMajorCourses()
+            sortCourses()
             return majorCourses!.count
         }
         return 1
@@ -71,7 +118,7 @@ class MajorCourseTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MajorCourseTableViewCell", for: indexPath) as? MajorCourseTableViewCell
             else {
-                fatalError("The dequeued cell is not an instance of StudentTableViewCell.")
+                fatalError("The dequeued cell is not an instance of MajorCourseTableViewCell.")
         }
         if loaded == true {
             let temp: NSDictionary = self.majorCourses![indexPath.row]

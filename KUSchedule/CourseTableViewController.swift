@@ -9,6 +9,29 @@
 import UIKit
 import FirebaseDatabase
 
+extension CourseTableViewController: UIViewControllerPreviewingDelegate {
+    // Peek
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        guard let indexPath = tableView.indexPathForRow(at: location),
+            let cell = tableView.cellForRow(at: indexPath) else { return nil }
+        
+        guard let previewViewController = storyboard?.instantiateViewController(withIdentifier: "CourseInfoViewController") as? CourseInfoViewController else { return nil }
+        
+        previewViewController.course = courseSections![indexPath.row]
+        
+        previewViewController.preferredContentSize = CGSize(width: 0, height: 600)
+        
+        previewingContext.sourceRect = cell.frame
+        
+        return previewViewController
+    }
+    
+    // Pop
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        
+    }
+}
+
 class CourseTableViewController: UITableViewController {
     
     var idPassed: String!
@@ -24,6 +47,10 @@ class CourseTableViewController: UITableViewController {
         tableView.dataSource = self
         tableView.delegate = self
         courseSections = []
+        
+        if traitCollection.forceTouchCapability == .available {
+            registerForPreviewing(with: self, sourceView: tableView)
+        }
         
         ref = Database.database().reference()
         ref!.child("courses").observeSingleEvent(of: .value, with: { (snapshot) in

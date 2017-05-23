@@ -28,6 +28,27 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Major Courses</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>com.WinVaris.majorSchedule</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Search Course</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>com.WinVaris.courseSchedule</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Search Student</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>com.WinVaris.studentSchedule</string>
+		</dict>
+	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

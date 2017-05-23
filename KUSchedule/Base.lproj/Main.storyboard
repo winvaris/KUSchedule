@@ -106,7 +106,7 @@ Transcript</string>
         <!--Faculty-->
         <scene sceneID="czE-sE-mLh">
             <objects>
-                <tableViewController id="PmT-OM-UT2" customClass="FacultyTableViewController" customModule="KUSchedule" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="FacultyTableViewController" id="PmT-OM-UT2" customClass="FacultyTableViewController" customModule="KUSchedule" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="DUe-ZH-grL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -251,7 +251,7 @@ Transcript</string>
         <!--Search ID-->
         <scene sceneID="uq0-EV-83d">
             <objects>
-                <viewController id="z2R-LY-bzv" customClass="StudentIDViewController" customModule="KUSchedule" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StudentIDViewController" id="z2R-LY-bzv" customClass="StudentIDViewController" customModule="KUSchedule" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KsJ-lM-BUS"/>
                         <viewControllerLayoutGuide type="bottom" id="ffB-UV-lUp"/>
@@ -305,7 +305,7 @@ Transcript</string>
         <!--Search ID-->
         <scene sceneID="CvD-ma-piZ">
             <objects>
-                <viewController id="xct-jx-x6D" customClass="CourseIDViewController" customModule="KUSchedule" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CourseIDViewController" id="xct-jx-x6D" customClass="CourseIDViewController" customModule="KUSchedule" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gfV-Hg-4X4"/>
                         <viewControllerLayoutGuide type="bottom" id="fUx-1j-fYe"/>
@@ -470,7 +470,7 @@ Transcript</string>
         <!--Course Information-->
         <scene sceneID="nWs-H4-ILy">
             <objects>
-                <viewController id="oZa-UJ-FRO" customClass="CourseInfoViewController" customModule="KUSchedule" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CourseInfoViewController" id="oZa-UJ-FRO" customClass="CourseInfoViewController" customModule="KUSchedule" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bzz-SH-Gbp"/>
                         <viewControllerLayoutGuide type="bottom" id="y5J-c4-JWv"/>
