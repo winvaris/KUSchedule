@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -90,7 +91,7 @@ Transcript</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="transcript"/>
                                 <connections>
-                                    <segue destination="CA6-E6-RNR" kind="show" id="5rO-x2-r0e"/>
+                                    <segue destination="xYx-YY-VzA" kind="show" id="osU-RG-TB1"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="F6J-Gw-zBx">
@@ -297,39 +298,127 @@ Transcript</string>
             </objects>
             <point key="canvasLocation" x="1800" y="-551"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="FIN-OO-r5F">
+        <!--Web View Controller-->
+        <scene sceneID="4ZT-0f-TqG">
             <objects>
-                <viewController id="CA6-E6-RNR" sceneMemberID="viewController">
+                <viewController id="SH8-sH-uRA" customClass="WebViewController" customModule="KUSchedule" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="zd0-xX-FIc"/>
-                        <viewControllerLayoutGuide type="bottom" id="URf-6u-aqG"/>
+                        <viewControllerLayoutGuide type="top" id="TtK-kf-Muv"/>
+                        <viewControllerLayoutGuide type="bottom" id="f6e-Ua-YQq"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="2oi-uc-PoP">
+                    <view key="view" contentMode="scaleToFill" id="t1G-gK-RVS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Coming" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R0s-dV-oRB">
-                                <rect key="frame" x="21" y="216" width="373" height="137"/>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zLq-03-OsB">
+                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="100"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Soon!!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vmc-zY-Kbf">
-                                <rect key="frame" x="23" y="384" width="368" height="137"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="100"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="zLq-03-OsB" id="M9E-cV-g09"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UIc-d3-4JL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fhg-I8-GpW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1037.68115942029" y="884.51086956521749"/>
+            <point key="canvasLocation" x="257" y="885"/>
+        </scene>
+        <!--Links-->
+        <scene sceneID="NbO-1F-hwe">
+            <objects>
+                <tableViewController storyboardIdentifier="LinksTableViewController" id="xYx-YY-VzA" customClass="LinksTableViewController" customModule="KUSchedule" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="KaD-d8-YFg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LinksTableViewCell" rowHeight="60" id="MKL-dD-ln3" customClass="LinksTableViewCell" customModule="KUSchedule" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MKL-dD-ln3" id="YAl-K5-IcH">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="59.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="https://inter-regis.ku.ac.th" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ET-Og-K46">
+                                            <rect key="frame" x="22" y="14" width="371" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="linkLabel" destination="7ET-Og-K46" id="7j4-I6-kcP"/>
+                                    <segue destination="SH8-sH-uRA" kind="show" identifier="ShowDetail" id="YAd-sG-BBF"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="xYx-YY-VzA" id="UzD-7T-J0J"/>
+                            <outlet property="delegate" destination="xYx-YY-VzA" id="ang-UF-9DT"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Links" id="0fy-fO-b2g">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="YLu-zA-axq">
+                                <connections>
+                                    <segue destination="uOf-sk-7AI" kind="show" identifier="AddLink" id="Vdx-3j-uuR"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="refresh" id="zBl-j1-W9k">
+                                <connections>
+                                    <action selector="refreshButton:" destination="xYx-YY-VzA" id="6lb-pR-pnb"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S4s-Ia-RRx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1038" y="885"/>
+        </scene>
+        <!--Add Link View Controller-->
+        <scene sceneID="PZa-jc-jUx">
+            <objects>
+                <viewController id="uOf-sk-7AI" customClass="AddLinkViewController" customModule="KUSchedule" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sDC-ff-e6l"/>
+                        <viewControllerLayoutGuide type="bottom" id="zvc-gx-SM9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dyS-AZ-0T8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QPl-EV-zLS">
+                                <rect key="frame" x="37" y="106" width="340" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BCk-be-pxz">
+                                <rect key="frame" x="296" y="143" width="81" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
+                                <state key="normal" title="Save Link"/>
+                                <connections>
+                                    <action selector="saveButton:" destination="uOf-sk-7AI" eventType="touchUpInside" id="cNd-Pn-WPi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="urlLabel" destination="QPl-EV-zLS" id="PZP-Re-okP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ayt-Ry-eR9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1800.0000000000002" y="884.51086956521749"/>
         </scene>
         <!--Search ID-->
         <scene sceneID="CvD-ma-piZ">
@@ -383,7 +472,7 @@ Transcript</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="skl-MD-4zx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1800" y="885"/>
+            <point key="canvasLocation" x="2707.2463768115945" y="884.51086956521749"/>
         </scene>
         <!--Course Table View Controller-->
         <scene sceneID="D7B-ox-wah">
@@ -436,7 +525,7 @@ Transcript</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="feR-kM-lZb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3216" y="885"/>
+            <point key="canvasLocation" x="4123.188405797102" y="884.51086956521749"/>
         </scene>
         <!--Schedule-->
         <scene sceneID="Doi-oH-EZM">
@@ -651,7 +740,7 @@ Transcript</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gzg-ZR-vnQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2506" y="885"/>
+            <point key="canvasLocation" x="3413.04347826087" y="884.51086956521749"/>
         </scene>
     </scenes>
     <resources>

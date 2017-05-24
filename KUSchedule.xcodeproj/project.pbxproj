@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1935D6E01ED555210028564E /* LinksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1935D6DF1ED555210028564E /* LinksTableViewCell.swift */; };
+		1935D6E21ED555C40028564E /* LinksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1935D6E11ED555C40028564E /* LinksTableViewController.swift */; };
+		1935D6E41ED55EAF0028564E /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1935D6E31ED55EAF0028564E /* WebViewController.swift */; };
+		1935D6E61ED564280028564E /* AddLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1935D6E51ED564280028564E /* AddLinkViewController.swift */; };
 		194209781ED2F0380062EEF1 /* FacultyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194209771ED2F0380062EEF1 /* FacultyTableViewController.swift */; };
 		1942097A1ED2F2290062EEF1 /* FacultyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194209791ED2F2290062EEF1 /* FacultyTableViewCell.swift */; };
 		1942097C1ED2F9440062EEF1 /* MajorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1942097B1ED2F9440062EEF1 /* MajorTableViewController.swift */; };
@@ -52,6 +56,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1935D6DF1ED555210028564E /* LinksTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinksTableViewCell.swift; sourceTree = "<group>"; };
+		1935D6E11ED555C40028564E /* LinksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinksTableViewController.swift; sourceTree = "<group>"; };
+		1935D6E31ED55EAF0028564E /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		1935D6E51ED564280028564E /* AddLinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLinkViewController.swift; sourceTree = "<group>"; };
 		194209771ED2F0380062EEF1 /* FacultyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacultyTableViewController.swift; sourceTree = "<group>"; };
 		194209791ED2F2290062EEF1 /* FacultyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacultyTableViewCell.swift; sourceTree = "<group>"; };
 		1942097B1ED2F9440062EEF1 /* MajorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MajorTableViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +152,7 @@
 		19B454BC1ECC57F600F5238A /* KUSchedule */ = {
 			isa = PBXGroup;
 			children = (
+				1935D6E31ED55EAF0028564E /* WebViewController.swift */,
 				197E28231ED1A2310052CCD3 /* CourseIDViewController.swift */,
 				197E28291ED1F77D0052CCD3 /* CourseInfoViewController.swift */,
 				197E28251ED1A8EA0052CCD3 /* CourseTableViewCell.swift */,
@@ -159,6 +168,9 @@
 				197E281F1ED0BEA60052CCD3 /* StudentTableViewCell.swift */,
 				197E28211ED0C0570052CCD3 /* StudentTableViewController.swift */,
 				19B454C11ECC57F600F5238A /* Main.storyboard */,
+				1935D6E11ED555C40028564E /* LinksTableViewController.swift */,
+				1935D6E51ED564280028564E /* AddLinkViewController.swift */,
+				1935D6DF1ED555210028564E /* LinksTableViewCell.swift */,
 				19B454BF1ECC57F600F5238A /* ViewController.swift */,
 				19B454BD1ECC57F600F5238A /* AppDelegate.swift */,
 				19B454C41ECC57F600F5238A /* Assets.xcassets */,
@@ -493,6 +505,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1935D6E41ED55EAF0028564E /* WebViewController.swift in Sources */,
 				197E28281ED1A9030052CCD3 /* CourseTableViewController.swift in Sources */,
 				19731F7D1ECCCC8000570C71 /* StudentIDViewController.swift in Sources */,
 				1942097E1ED2FA320062EEF1 /* MajorTableViewCell.swift in Sources */,
@@ -506,9 +519,12 @@
 				194209801ED31AB60062EEF1 /* MajorCourseTableViewController.swift in Sources */,
 				19B454BE1ECC57F600F5238A /* AppDelegate.swift in Sources */,
 				197E28241ED1A2310052CCD3 /* CourseIDViewController.swift in Sources */,
+				1935D6E01ED555210028564E /* LinksTableViewCell.swift in Sources */,
 				197E28261ED1A8EA0052CCD3 /* CourseTableViewCell.swift in Sources */,
+				1935D6E61ED564280028564E /* AddLinkViewController.swift in Sources */,
 				19731F7F1ECCCCD200570C71 /* HomeViewController.swift in Sources */,
 				197E28201ED0BEA60052CCD3 /* StudentTableViewCell.swift in Sources */,
+				1935D6E21ED555C40028564E /* LinksTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
