@@ -59,7 +59,6 @@ class StudentTableViewController: UITableViewController {
         ref!.child("courses").observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
             self.courses = snapshot.value as? NSArray
-            print("HI1")
             self.tableView.reloadData()
         }) { (error) in
             print(error.localizedDescription)
@@ -67,7 +66,6 @@ class StudentTableViewController: UITableViewController {
         ref!.child("students").observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
             self.students = snapshot.value as? NSArray
-            print("HI2")
             self.loaded = true;
             self.tableView.reloadData()
         }) { (error) in

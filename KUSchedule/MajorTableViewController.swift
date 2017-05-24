@@ -27,7 +27,6 @@ class MajorTableViewController: UITableViewController {
         ref!.child("faculties").child(facultyName).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
             self.majors = snapshot.value as? NSArray
-            print("HI")
             self.loaded = true;
             self.tableView.reloadData()
         }) { (error) in
