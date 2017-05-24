@@ -19,6 +19,7 @@ class CourseIDViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        idTextField.setBottomBorder()
         
         // Add the tapped around to hide keyboard function
         self.hideKeyboardWhenTappedAround()
